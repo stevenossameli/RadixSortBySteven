@@ -42,10 +42,12 @@ public class StringUtil {
 
 	// construye un int[] conteniendo los elementos de String[] arr
 	// representados como cadenas de caracteres
-	public static void toIntArray(String[] arr, int[] intArr) {
+	public static int[] toIntArray(String[] arr) {
+	    int[] newArray = new int[arr.length];
 		for (int i = 0; i < arr.length; i++) {
-		    intArr[i] = Integer.parseInt(arr[i]);
+		    newArray[i] = Integer.parseInt(arr[i]);
 		}
+		return newArray;
 	}
 
 	// Retorna la longitud del elemento con mayor cantidad
@@ -61,7 +63,7 @@ public class StringUtil {
 
 	// Completa los elemento del arr agregando caracteres c
 	// a la izquierda, dejando a todos con la longitud del mayor
-	public static void lNormalize(String arr[], char c) {
+	public static void lNormalize(String[] arr, char c) {
 	    int max = maxLength(arr);
 		for (int i = 0; i < arr.length; i++) {
 				arr[i] = StringUtil.lpad(arr[i], max, c);
@@ -87,5 +89,4 @@ public class StringUtil {
 			}
 		}
 	}
-
 }

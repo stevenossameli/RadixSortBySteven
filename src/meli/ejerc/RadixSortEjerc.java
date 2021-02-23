@@ -44,9 +44,10 @@ public class RadixSortEjerc {
             max--;
         }
 
-
         // Convertimos el String[] en int[]
-         StringUtil.toIntArray(strArray, arr);
+        int[] newArr = new int[strArray.length];
+        newArr = StringUtil.toIntArray(strArray);
+        System.arraycopy(newArr, 0, arr, 0, arr.length);
 
     }
 
